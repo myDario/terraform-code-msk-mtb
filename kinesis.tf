@@ -1,11 +1,11 @@
 resource "aws_kinesis_stream" "my_stream" {
   name             = "my-kinesis-stream"
   shard_count      = 1
-  retention_period = 7
+  retention_period = 24
 }
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "my-firehose-bucket"
-  acl    = "private"
+  acl    = "aws_s3_bucket_acl"
 }
 resource "aws_kinesis_firehose_delivery_stream" "my_delivery_stream" {
   name               = "my-delivery-stream"
