@@ -1,8 +1,0 @@
-#set kinens stream as a subscription for all CW log groups
-
-aws logs put-subscription-filter \
-    --log-group-name /aws/lambda \
-    --filter-name lambda-to-kinesis \
-    --filter-pattern "" \
-    --destination-arn arn:aws:kinesis:us-east-1:123456789012:stream/KINESIS_STREAM_NAME
-
